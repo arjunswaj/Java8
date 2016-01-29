@@ -1,15 +1,17 @@
 package com.asb.demo.client.impl;
 
 import com.asb.demo.client.StudentClient;
+import com.asb.demo.eo.Student;
 import org.openjdk.jmh.annotations.*;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by arjun on 29/01/16.
  */
-@BenchmarkMode(Mode.SingleShotTime)
-@OutputTimeUnit(TimeUnit.NANOSECONDS)
+@BenchmarkMode(Mode.All)
+@OutputTimeUnit(TimeUnit.SECONDS)
 @State(Scope.Thread)
 public class FastStudentClientBenchMark {
 
@@ -23,12 +25,14 @@ public class FastStudentClientBenchMark {
   @Benchmark
   public void testParallel() {
     studentClient.setParallel(true);
-    studentClient.getStudents().forEach(student -> System.out.println(student.getName()));
+    List<Student> students = studentClient.getStudents();
+    System.out.println("Size: " + students.size());
   }
 
   @Benchmark
   public void testSerial() {
     studentClient.setParallel(false);
-    studentClient.getStudents().forEach(student -> System.out.println(student.getName()));
+    List<Student> students = studentClient.getStudents();
+    System.out.println("Size: " + students.size());
   }
 }
