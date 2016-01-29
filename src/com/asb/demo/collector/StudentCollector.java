@@ -22,8 +22,8 @@ public class StudentCollector implements Runnable {
   public void run() {
 
     Map<String, Student> students =
-        Arrays.asList(new FastStudentClient(instance),
-            new SlowStudentClient(instance))
+        Arrays.asList(new FastStudentClient(instance, true),
+            new SlowStudentClient(instance, true))
             .parallelStream()
             .flatMap(studentClient -> studentClient
                 .getStudents()

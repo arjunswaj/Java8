@@ -7,34 +7,45 @@ import com.asb.demo.eo.Student;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by arjun on 23/01/16.
  */
 public class FastStudentClient implements StudentClient {
   private int instance;
+  private boolean parallel;
   private StudentProducer studentProducer = StudentProducerImpl.getInstance();
   private List<String> names = Arrays.asList("Arjun", "Nitesh", "Anusha", "Tuli", "Anubhav");
-  private Random random = new Random();
 
-  public FastStudentClient(int instance) {
+  public FastStudentClient(int instance, boolean parallel) {
     this.instance = instance;
+    this.parallel = parallel;
   }
 
   @Override
   public List<Student> getStudents() {
-    return names.parallelStream()
+    return getStudentStream()
         .map(name -> getStudentFromProducer(name))
         .collect(Collectors.toList());
+  }
+
+  private Stream<String> getStudentStream() {
+    Stream<String> stream;
+    if (parallel) {
+      stream = names.parallelStream();
+    } else {
+      stream = names.stream();
+    }
+    return stream;
   }
 
   private Student getStudentFromProducer(String name) {
     System.out.println(instance + ": Fast Producer: " + name + " in " + Thread.currentThread().getName());
     Student student;
     try {
-      Thread.sleep(random.nextInt(300));
+      Thread.sleep(100);
       student = studentProducer.produce(name);
     } catch (InterruptedException ignored) {
       student = new Student("", 0);
