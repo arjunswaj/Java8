@@ -47,7 +47,6 @@ public class FastStudentClient implements StudentClient {
   }
 
   private Student getStudentFromProducer(String name) {
-    // System.out.println(instance + ": Fast Producer: " + name + " in " + Thread.currentThread().getName());
     Student student;
     try {
       Thread.sleep(100);

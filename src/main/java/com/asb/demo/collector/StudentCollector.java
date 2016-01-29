@@ -28,13 +28,9 @@ public class StudentCollector implements Runnable {
             .flatMap(studentClient -> studentClient
                 .getStudents()
                 .stream())
-            .collect(Collectors.toMap(s -> s.getName(), s -> s,
-                (s1, s2) -> s1.getTotal() > s2.getTotal() ? s1 : s2));
+            .collect(Collectors.toMap(s -> s.getName(), s -> s));
 
-    students.entrySet()
-        .stream()
-        .forEach(entry -> System.out.println(instance + ": " + entry.getKey() + ":"
-            + entry.getValue().getTotal()));
+    System.out.println(instance + ":" + students.size());
   }
 
 }

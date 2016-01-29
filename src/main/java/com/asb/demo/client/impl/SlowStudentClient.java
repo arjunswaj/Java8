@@ -46,7 +46,6 @@ public class SlowStudentClient implements com.asb.demo.client.StudentClient {
   }
 
   private Student getStudentFromProducer(String name) {
-    System.out.println(instance + ": Slow Producer: " + name + " in " + Thread.currentThread().getName());
     Student student;
     try {
       Thread.sleep(300);
