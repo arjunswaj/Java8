@@ -24,6 +24,11 @@ public class SlowStudentClient implements com.asb.demo.client.StudentClient {
   }
 
   @Override
+  public void setParallel(boolean parallel) {
+    this.parallel = parallel;
+  }
+
+  @Override
   public List<Student> getStudents() {
     return getStudentStream()
         .map(name -> getStudentFromProducer(name))

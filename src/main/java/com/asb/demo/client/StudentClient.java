@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface StudentClient {
   List<Student> getStudents();
+  void setParallel(boolean parallel);
 }
