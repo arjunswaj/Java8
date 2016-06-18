@@ -1,6 +1,6 @@
-package com.asb.demo.datasource;
+package com.asb.demo.stream.datasource;
 
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.eo.Student;
 
 /**
  * Created by arjun on 23/01/16.

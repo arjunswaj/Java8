@@ -1,6 +1,6 @@
-package com.asb.demo;
+package com.asb.demo.stream;
 
-import com.asb.demo.collector.StudentCollector;
+import com.asb.demo.stream.collector.StudentCollector;
 
 import java.util.stream.IntStream;
 

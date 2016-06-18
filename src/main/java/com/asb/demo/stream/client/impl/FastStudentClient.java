@@ -1,9 +1,9 @@
-package com.asb.demo.client.impl;
+package com.asb.demo.stream.client.impl;
 
-import com.asb.demo.client.StudentClient;
-import com.asb.demo.datasource.StudentProducer;
-import com.asb.demo.datasource.impl.StudentProducerImpl;
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.client.StudentClient;
+import com.asb.demo.stream.datasource.StudentProducer;
+import com.asb.demo.stream.datasource.impl.StudentProducerImpl;
+import com.asb.demo.stream.eo.Student;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,8 +1,9 @@
-package com.asb.demo.client.impl;
+package com.asb.demo.stream.client.impl;
 
-import com.asb.demo.datasource.StudentProducer;
-import com.asb.demo.datasource.impl.StudentProducerImpl;
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.datasource.StudentProducer;
+import com.asb.demo.stream.datasource.impl.StudentProducerImpl;
+import com.asb.demo.stream.eo.Student;
+import com.asb.demo.stream.client.StudentClient;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.stream.Stream;
 /**
  * Created by arjun on 23/01/16.
  */
-public class SlowStudentClient implements com.asb.demo.client.StudentClient {
+public class SlowStudentClient implements StudentClient {
   private StudentProducer studentProducer = StudentProducerImpl.getInstance();
   private List<String> names = Arrays.asList("Jayanth", "Gunjan", "Gaurav", "Aniket");
   private int instance;

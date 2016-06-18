@@ -1,7 +1,7 @@
-package com.asb.demo.client.impl;
+package com.asb.demo.stream.client.impl;
 
-import com.asb.demo.client.StudentClient;
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.client.StudentClient;
+import com.asb.demo.stream.eo.Student;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.List;

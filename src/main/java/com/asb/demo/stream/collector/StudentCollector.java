@@ -1,8 +1,8 @@
-package com.asb.demo.collector;
+package com.asb.demo.stream.collector;
 
-import com.asb.demo.client.impl.FastStudentClient;
-import com.asb.demo.client.impl.SlowStudentClient;
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.client.impl.FastStudentClient;
+import com.asb.demo.stream.client.impl.SlowStudentClient;
+import com.asb.demo.stream.eo.Student;
 
 import java.util.Arrays;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.asb.demo.eo;
+package com.asb.demo.stream.eo;
 
 /**
  * Created by arjun on 23/01/16.

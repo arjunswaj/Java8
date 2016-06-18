@@ -1,7 +1,7 @@
-package com.asb.demo.datasource.impl;
+package com.asb.demo.stream.datasource.impl;
 
-import com.asb.demo.datasource.StudentProducer;
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.datasource.StudentProducer;
+import com.asb.demo.stream.eo.Student;
 
 import java.util.Random;
 

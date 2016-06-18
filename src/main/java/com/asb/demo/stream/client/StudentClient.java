@@ -1,6 +1,6 @@
-package com.asb.demo.client;
+package com.asb.demo.stream.client;
 
-import com.asb.demo.eo.Student;
+import com.asb.demo.stream.eo.Student;
 
 import java.util.List;
 
