@@ -22,7 +22,7 @@ public class WordCounter implements DnCLambdas<String, Integer> {
     }
 
     @Override
-    public Function<String, String> valueOperator() {
+    public Function<String, String> decreaseOperation() {
         return s -> s.substring(s.indexOf(" ") + 1);
     }
 

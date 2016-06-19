@@ -24,7 +24,7 @@ public class Brackets implements DnCLambdas<Integer, Set<String>> {
     }
 
     @Override
-    public Function<Integer, Integer> valueOperator() {
+    public Function<Integer, Integer> decreaseOperation() {
         return integer -> integer - 1;
     }
 

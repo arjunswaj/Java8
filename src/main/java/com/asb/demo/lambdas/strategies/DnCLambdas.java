@@ -25,11 +25,11 @@ public interface DnCLambdas<T, R> {
     Function<T, R> baseCase();
 
     /**
-     * Value operator of the conquer.
+     * Decrease operation of the conquer.
      *
-     * @return value operator
+     * @return decrease operation lambda
      */
-    Function<T, T> valueOperator();
+    Function<T, T> decreaseOperation();
 
     /**
      * Recursive case of the conquer.

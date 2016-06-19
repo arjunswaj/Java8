@@ -25,7 +25,7 @@ public class SpecialCharacterCounter implements DnCLambdas<String, Integer> {
     }
 
     @Override
-    public Function<String, String> valueOperator() {
+    public Function<String, String> decreaseOperation() {
         return s -> s.substring(1);
     }
 

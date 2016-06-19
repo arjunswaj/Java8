@@ -22,7 +22,7 @@ public class SumOfSquaresOfEvenNumbers
     }
 
     @Override
-    public Function<Integer, Integer> valueOperator() {
+    public Function<Integer, Integer> decreaseOperation() {
         return integer -> (1 == integer % 2) ? integer - 1 :
                 integer - 2;
     }

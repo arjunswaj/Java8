@@ -10,7 +10,7 @@ import java.util.function.Function;
 public class SumOfSquaresOfOddNumbers extends SumOfSquares {
 
     @Override
-    public Function<Integer, Integer> valueOperator() {
+    public Function<Integer, Integer> decreaseOperation() {
         return integer -> (0 == integer % 2) ? integer - 1 :
                 integer - 2;
     }

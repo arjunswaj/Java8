@@ -20,21 +20,21 @@ public class DecreaseAndConquerImpl<T, R> implements DecreaseAndConquer<T, R> {
     public R conquer(T value, DnCLambdas<T, R> lambdas) {
         return this.conquer(lambdas.predicate(),
                 lambdas.baseCase(),
-                lambdas.valueOperator(),
+                lambdas.decreaseOperation(),
                 lambdas.recursiveCase(),
                 value);
     }
 
     private R conquer(Predicate<T> predicate,
                       Function<T, R> baseCase,
-                      Function<T, T> valueOperator,
+                      Function<T, T> decreaseOperation,
                       BiFunction<R, T, R> recursiveCase, T value) {
         if (predicate.test(value)) {
             return baseCase.apply(value);
         }
         return recursiveCase.apply(
-                this.conquer(predicate, baseCase, valueOperator,
-                        recursiveCase, valueOperator.apply(value)),
+                this.conquer(predicate, baseCase, decreaseOperation,
+                        recursiveCase, decreaseOperation.apply(value)),
                 value);
     }
 }
