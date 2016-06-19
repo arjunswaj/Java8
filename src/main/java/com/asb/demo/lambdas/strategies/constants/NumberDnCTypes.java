@@ -1,10 +1,10 @@
-package com.asb.demo.lambdas.recursion;
+package com.asb.demo.lambdas.strategies.constants;
 
 /**
- * Recursion Types.
+ * Decrease And Conquer Types for Numbers.
  * Created by arjun on 18/06/16.
  */
-public enum NumberRecursionTypes {
+public enum NumberDnCTypes {
     FACTORIAL,
     SUMMATION,
     SUM_OF_SQUARES,
